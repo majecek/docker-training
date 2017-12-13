@@ -1,0 +1,13 @@
+version: "3.4"
+
+services:
+  database: #service and hostname name
+    image: marek-db:1.0
+    environment:
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "asdf"
+
+  web:
+    image: marek-web:1.0
+    ports:
+      - "8080:80"

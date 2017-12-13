@@ -1,0 +1,26 @@
+docker info
+docker inspect
+docker run -it --name marek-alpine alpine /bin/sh
+
+alpine:
+apk --no-cache search java
+
+
+
+http://www.cd.vendavo.com/
+
+
+docker-compose
+
+https://docs.docker.com/compose/compose-file/
+
+docker system prune (smaze zastavene containery a ostatni veci)
+
+docker build -f Dockerfile-DB -t marek-db:1.0 .
+
+docker-compose rm -sf  (zastavi a smaze)
+docker-compose up
+
+###Dockerfile-WEB
+docker build -f Dockerfile-WEB -t marek-web:1.0 .
+docker-compose up

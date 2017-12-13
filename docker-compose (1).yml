@@ -1,0 +1,17 @@
+version: "3.4"
+
+services:
+  database: #service-name and host-name
+    image: slon-db:1.0
+    environment:
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "asdf"
+
+
+  web:
+    image: slon-web
+    restart: always
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "8080:80"

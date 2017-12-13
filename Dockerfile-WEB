@@ -1,0 +1,3 @@
+FROM softeu/ubuntu-apache-php-postgres
+
+COPY index.php /var/www/html/

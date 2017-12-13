@@ -24,3 +24,32 @@ docker-compose up
 ###Dockerfile-WEB
 docker build -f Dockerfile-WEB -t marek-web:1.0 .
 docker-compose up
+
+==> http://localhost:8080/index.php
+
+
+
+### SWARM
+
+docker swarm init
+
+(je tam url kdyz chci pridat dalsi compy:)
+-> docker swarm join --token SWMTKN-1-3ontrnccssvafpao53940vwcjtvhtiw4bw6weuefzw16vjplh9-5oukgr2c32cm1wxhr9h5qrivq 192.168.65.2:2377
+
+docker node ls -> leader/worker
+
+docker stack deploy -c docker-compose.yml marek-stack
+docker service ls
+docker stack ls
+
+### scaling (let's make 3 DB)
+docker service ls
+docker service scale marek-stack_database=3
+
+##lets kill some
+docker ps
+docker kill d68afef5a726 235b0ea6ad88
+
+
+leave SWARM
+docker swarm leave
